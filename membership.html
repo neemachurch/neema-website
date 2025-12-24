@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Membership – Neema Gospel Church</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="logo.png" class="logo" alt="Logo">
+    <span class="church-name">Neema Gospel Church</span>
+  </div>
+
+  <nav>
+      <div class="menu-icon" id="menuToggle">&#9776;</div>
+
+      <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="leaders.html">Leaders</a>
+          <a href="ministries.html">Ministries</a>
+          <a href="events.html">Events</a>
+          <a href="sermons.html">Sermons</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="livestream.html">Livestream</a>
+          <a href="contact.html">Contact</a>
+          <a href="giving.html" class="give-btn">Give</a>
+      </div>
+  </nav>
+</header>
+
+<section class="livestream-section fade-in" style="padding:60px 20px;">
+    <h1>Become a Member</h1>
+    <p class="intro">Join the Neema Gospel Church family today — we are excited to walk this journey of faith with you.</p>
+
+    <div class="form-box" style="
+        max-width:500px;
+        margin:30px auto;
+        background:white;
+        padding:30px;
+        border-radius:10px;
+        box-shadow:0 4px 16px rgba(0,0,0,0.15);
+    ">
+
+        <form id="membershipForm">
+            <label>Full Name</label>
+            <input type="text" id="fullName" required>
+
+            <label>Phone Number</label>
+            <input type="text" id="phone" required>
+
+            <label>Email Address</label>
+            <input type="email" id="email" required>
+
+            <label>Why do you want to join?</label>
+            <textarea id="reason" rows="4" required></textarea>
+
+            <button type="submit" class="btn primary" style="width:100%;margin-top:10px;">Submit Membership</button>
+        </form>
+
+        <p id="membershipResponse" style="margin-top:15px; text-align:center; font-weight:bold;"></p>
+    </div>
+</section>
+
+<script>
+// simple simulated success message
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("membershipForm");
+    const response = document.getElementById("membershipResponse");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        response.innerText = "Thank you! Your membership request has been received.";
+        form.reset();
+    });
+});
+</script>
+
+<!-- ===========================
+      FOOTER
+=========================== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Neema Gospel Church</h3>
+      <p>A Christ-centered ministry transforming lives through the Word of God.</p>
+
+      <div class="newsletter-box">
+        <h4>Subscribe to Updates</h4>
+        <p>Get church announcements & devotionals.</p>
+
+        <a href="https://forms.microsoft.com/r/XtHcffGWjg?origin=lprLink"
+   target="_blank"
+   class="btn primary">
+   Subscribe to Updates
+</a>
+
+        <p id="newsletterResponse" class="newsletter-response"></p>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="ministries.html">Ministries</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="livestream.html">Livestream</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Ministries</h4>
+      <ul>
+        <li><a href="ministries.html">Worship Team</a></li>
+        <li><a href="ministries.html">Youth Ministry</a></li>
+        <li><a href="ministries.html">Children's Ministry</a></li>
+        <li><a href="ministries.html">Men's Fellowship</a></li>
+        <li><a href="ministries.html">Women's Fellowship</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Ruiru, Kenya</p>
+      <p>Phone: (254) 701 842 755</p>
+      <p>Email: neemagospelchurchruiru@outlook.com</p>
+
+      <div class="socials">
+        <a class="social-icon fb" href="#" target="_blank">f</a>
+        <a class="social-icon ig" href="#" target="_blank">♛</a>
+        <a class="social-icon yt" href="https://youtube.com/@ngc254" target="_blank">▶</a>
+        <a class="social-icon wa" href="#" target="_blank">✆</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="currentYear"></span> Neema Gospel Church Ruiru— All Rights Reserved.
+  </div>
+</footer>

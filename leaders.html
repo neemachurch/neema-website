@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaders - Neema Gospel Church</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===========================
+     HEADER (same as your site)
+=========================== -->
+<header>
+    <div class="logo-area">
+        <img src="logo.png" class="logo">
+        <span class="church-name">Neema Gospel Church</span>
+    </div>
+
+    <nav>
+        <div class="menu-icon" id="menuToggle">&#9776;</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="leaders.html">Leaders</a>
+            <a href="ministries.html">Ministries</a>
+            <a href="events.html">Events</a>
+            <a href="sermons.html">Sermons</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="livestream.html">Livestream</a>
+            <a href="newhere.html">New Here?</a>
+            <a href="contact.html">Contact</a>
+            <a href="giving.html" class="give-btn">Give</a>
+        </div>
+    </nav>
+</header>
+
+<!-- ===========================
+     HERO — BISHOP & REV. LUCY
+=========================== -->
+<section class="leader-hero fade-in">
+    <div class="leader-hero-bg" style="background-image:url('bishop-hero.jpg');"></div>
+
+    <div class="leader-hero-inner">
+        <h1>Bishop Jackson & Reverend Lucy Kingori</h1>
+        <p>
+            NGC is a multi-cultural church with diverse people who find harmony and unity 
+            in our relationship with God and one another. We believe that true personal 
+            growth only happens in a community where an individual is known and loved.
+        </p>
+        <p>
+            We appreciate that we are who we are because of God’s love and forgiveness — 
+            not because we deserve it but simply because of His mercy given through Jesus.
+        </p>
+
+        <button class="btn primary hero-bio-btn"
+            data-name="Bishop Jackson & Reverend Lucy Kingori"
+            data-title="Founders"
+            data-img="bishop-hero.jpg"
+            data-bio="NGC is a multi-cultural church with diverse people who find harmony and unity in our relationship with God and one another. We believe that true personal growth only happens in a community where an individual is known and loved. We appreciate that we are who we are because of God’s love and forgiveness, not because we deserve it but simply because of His Mercy given through Jesus. We believe that the NGC experience will cause you to come again and again and that you will connect with us, be involved in our ministries, and grow spiritually."
+        >
+            Read Bio
+        </button>
+    </div>
+</section>
+
+
+<!-- ===========================
+     MODAL — FULL WORKING VERSION
+=========================== -->
+<div id="bioModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close" id="modalClose">&times;</span>
+
+        <div class="modal-photo"><img id="modalPhoto"></div>
+        <h2 id="modalName"></h2>
+        <p id="modalTitle" class="modal-title"></p>
+
+        <p id="modalBio"></p>
+    </div>
+</div>
+
+<!-- ===========================
+      FOOTER
+=========================== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Neema Gospel Church</h3>
+      <p>A Christ-centered ministry transforming lives through the Word of God.</p>
+
+      <div class="newsletter-box">
+        <h4>Subscribe to Updates</h4>
+        <p>Get church announcements & devotionals.</p>
+
+        <a href="https://forms.microsoft.com/r/XtHcffGWjg?origin=lprLink"
+   target="_blank"
+   class="btn primary">
+   Subscribe to Updates
+</a>
+
+        <p id="newsletterResponse" class="newsletter-response"></p>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="ministries.html">Ministries</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="livestream.html">Livestream</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Ministries</h4>
+      <ul>
+        <li><a href="ministries.html">Worship Team</a></li>
+        <li><a href="ministries.html">Youth Ministry</a></li>
+        <li><a href="ministries.html">Children's Ministry</a></li>
+        <li><a href="ministries.html">Men's Fellowship</a></li>
+        <li><a href="ministries.html">Women's Fellowship</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Ruiru, Kenya</p>
+      <p>Phone: (254) 701 842 755</p>
+      <p>Email: neemagospelchurchruiru@outlook.com</p>
+
+      <div class="socials">
+        <a class="social-icon fb" href="#" target="_blank">f</a>
+        <a class="social-icon ig" href="#" target="_blank">♛</a>
+        <a class="social-icon yt" href="https://youtube.com/@ngc254" target="_blank">▶</a>
+        <a class="social-icon wa" href="#" target="_blank">✆</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="currentYear"></span> Neema Gospel Church Ruiru— All Rights Reserved.
+  </div>
+</footer>
+
+
+<!-- ===========================
+     MODAL SCRIPT (REQUIRED)
+=========================== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("bioModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalName = document.getElementById("modalName");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBio = document.getElementById("modalBio");
+    const modalPhoto = document.getElementById("modalPhoto");
+
+    function openModal(card) {
+        modalName.textContent = card.dataset.name;
+        modalTitle.textContent = card.dataset.title;
+        modalBio.textContent = card.dataset.bio;
+        modalPhoto.src = card.dataset.img;
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+    }
+
+    document.querySelectorAll(".bio-btn, .hero-bio-btn").forEach(btn => {
+        btn.addEventListener("click", () => openModal(btn.closest(".leader-card") || btn));
+    });
+
+    modalClose.addEventListener("click", () => {
+        modal.classList.remove("show");
+        document.body.style.overflow = "";
+    });
+
+    modal.addEventListener("click", e => {
+        if (e.target === modal) {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
